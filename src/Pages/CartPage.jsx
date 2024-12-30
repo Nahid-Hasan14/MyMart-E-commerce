@@ -19,10 +19,6 @@ export default function CartPage() {
     dispatch(setCartsFromLocalStorage(getCartItems))
   }, [dispatch])
 
-  useEffect(()=>{
-    localStorage.setItem("cartData", JSON.stringify(carts))
-  }, [carts])
-
   const handleEncrement = (cart)=> {
       dispatch(addToCart(cart)) 
   }
