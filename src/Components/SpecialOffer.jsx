@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import { fatchProducts } from '../features/ProductsSlice';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { addToCart } from '../features/CartSlice';
+import { toast } from 'react-toastify';
 
 export default function SpecialOffer() {
   
@@ -17,6 +19,13 @@ export default function SpecialOffer() {
 
    const allproducts = products.products || [];
   //  console.log(allproducts)
+
+  const handleCart= (product)=> {
+    toast.dismiss();
+    dispatch(addToCart(product))
+    toast.success("Add to cart Successfuly", { autoClose: 1000 })
+  }
+
    // Slick Slider
   const settings = {
     dots: true,
@@ -68,7 +77,7 @@ export default function SpecialOffer() {
                     <p>Save $40.00</p>
                   </div>
                   <div className="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                    <button className='btn btn-info'>Add to Cart</button>
+                    <button onClick={()=>handleCart(product)} className='btn btn-info'>Add to Cart</button>
                   </div>
                 </div>
               </div>
