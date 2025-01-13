@@ -19,6 +19,13 @@ export default function CartPage() {
     dispatch(setCartsFromLocalStorage(getCartItems))
   }, [dispatch])
 
+  useEffect(()=>{
+    const handleViewPort = document.getElementById("checkout")
+    if(handleViewPort){
+      handleViewPort.scrollIntoView({behavior: 'smooth'})
+    }
+  }, [])
+
   const handleEncrement = (cart)=> {
       dispatch(addToCart(cart)) 
   }
@@ -50,7 +57,7 @@ export default function CartPage() {
 
   return (
     <div>
-      <div className="privacy">
+      <div id="checkout" className="privacy">
         <div className="container">
           {/* tittle heading */}
           <h3 className="tittle-w3l">

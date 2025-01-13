@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <>
       <Bannar />
-      <div className="contact-w3l">
+      <div id="contact" className="contact-w3l">
         <div className="container">
           {/* tittle heading */}
           <h3 className="tittle-w3l">

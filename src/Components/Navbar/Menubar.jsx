@@ -2,6 +2,19 @@ import { NavLink } from "react-router-dom";
 
 
 export default function Menubar() {
+
+  
+
+  const handleClickContact= ()=> {
+    
+
+    setTimeout(()=>{
+      const contactSection = document.getElementById("contact")
+      if(contactSection) {
+        contactSection.scrollIntoView({behavior: 'smooth'})
+      }
+    }, 100)
+  }
   return (
     <div>
       <div className="ban-top">
@@ -220,7 +233,7 @@ export default function Menubar() {
                     </NavLink>
                   </li>
                   <li className="">
-                    <NavLink to={"/contact"} className="nav-stylehead">
+                    <NavLink to={"/contact"} onClick={handleClickContact} className="nav-stylehead">
                       Contact
                     </NavLink>
                   </li>

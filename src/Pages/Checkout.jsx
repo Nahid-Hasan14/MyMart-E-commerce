@@ -1,6 +1,6 @@
 import { Link, useNavigate} from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Checkout = () => {
   
@@ -14,6 +14,13 @@ const Checkout = () => {
     console.log("Payment Option", selectPaymentMethod)
     navigate("/thanks-page")
   }
+
+  useEffect(()=>{
+    const scrolview= document.getElementById("checkout")
+    if(scrolview){
+      scrolview.scrollIntoView({behavior: 'smooth'})
+    }
+  }, [])
 
   const {carts} = useSelector((state)=> state.cartItemsList)
   console.log(carts)
@@ -34,7 +41,7 @@ const Checkout = () => {
    
   return (
     <div >
-      <div className="container" style={{ marginTop: 30 }}>
+      <div id="checkout" className="container" style={{ marginTop: 30 }}>
         <div className="row checkout">
           <div className="col-lg-9">
 

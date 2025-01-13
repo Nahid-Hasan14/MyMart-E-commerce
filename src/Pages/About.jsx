@@ -1,11 +1,19 @@
+import { useEffect } from "react"
 import Bannar from "../Components/Bannar"
 
 
 export default function About() {
+
+  useEffect(()=> {
+    const scroolAbout = document.getElementById("about")
+    if(scroolAbout){
+      scroolAbout.scrollIntoView({behavior: 'smooth'})
+    }
+  }, [])
   return (
       <>
       <Bannar />
-  <div className="welcome">
+  <div id="about" className="welcome">
     <div className="container">
       {/* tittle heading */}
       <h3 className="tittle-w3l">
